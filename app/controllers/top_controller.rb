@@ -1,9 +1,9 @@
 class TopController < ApplicationController
   def main
     if session[:login_uid]
-      render 'main'
+      render "main"
     else
-      render 'login'
+      render "login"
     end
   end
 
@@ -14,7 +14,7 @@ class TopController < ApplicationController
       session[:login_uid] = user.uid
       redirect_to top_main_path
     else
-      render 'error'
+      render "error"
     end
   end
 
